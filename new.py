@@ -23,18 +23,18 @@ print(train_dataset)
 print(train_dataset.classes)
 print(train_dataset.class_indices)
 
-model = tf.keras.models.sequential([tf.keras.layers.Conv2D(16, (3,3), activation = 'relu', input_shape = (200,200,3)),
+model = tf.keras.models.Sequential([tf.keras.layers.Conv2D(16, (3,3), activation = 'relu', input_shape = (200,200,3)),
                                     tf.keras.layers.MaxPool2D(2,2),
                                     tf.keras.layers.Conv2D(32, (3,3), activation = 'relu'),
                                     tf.keras.layers.MaxPool2D(2,2),
                                     tf.keras.layers.Conv2D(64, (3,3), activation = 'relu'),
                                     tf.keras.layers.MaxPool2D(2,2),
-                                    tf.keras.layers.flatten(),
+                                    tf.keras.layers.Flatten(),
                                     tf.keras.layers.Dense(512, activation = 'relu'),
                                     tf.keras.layers.Dense(1, activation = 'sigmoid')])
 
 model.compile(loss = 'binary_crossentropy',
-              optimizer = RMSprop(lr=0.001),
+              optimizer = RMSprop(0.001),
               metrics = ['accuracy'])
 
 model_fit = model.fit(train_dataset,
