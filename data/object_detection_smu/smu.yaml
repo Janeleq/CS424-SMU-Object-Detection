@@ -1,0 +1,9 @@
+# Dataset Path
+path: C:\wamp64\www\CS424-G1\data\object_detection_smu\smu_split_dataset
+
+train: images\train
+val: images\val
+test: images\test
+
+# Class Names
+names: [SMU]
